@@ -87,6 +87,21 @@ RESPONSECODE IFDHPowerICC (DWORD Lun, DWORD Action, PUCHAR Atr, PDWORD AtrLength
 			*AtrLength = ret;
 		memcpy(Atr, atr, *AtrLength);
 		return IFD_SUCCESS;
+	case IFD_RESET:
+		ret = ioctl(reader_fd, O2SCR_WARM_RST, NULL);
+		if (ret < 0) {
+			*AtrLength = 0;
+			return IFD_ERROR_POWER_ACTION;
+		}
+		ret = ioctl(reader_fd, O2SCR_GET_ATR, atr);
+		if (ret < 0) {
+			*AtrLength = 0;
+			return IFD_COMMUNICATION_ERROR;
+		}
+		if (ret < *AtrLength)
+			*AtrLength = ret;
+		memcpy(Atr, atr, *AtrLength);
+		return IFD_SUCCESS;
 	default:
 		return IFD_NOT_SUPPORTED;
 	}

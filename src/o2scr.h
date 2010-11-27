@@ -8,6 +8,7 @@
 #define O2SCR_PON	_IO('o', 0x03)
 #define O2SCR_POFF	_IO('o', 0x04)
 #define O2SCR_GET_ATR	_IOW('o', 0x05, unsigned char[O2SCR_ATR_SIZE])
+#define O2SCR_WARM_RST	_IO('o', 0x06)
 
 /* STATUS_EXCH */
 #define BAD_TS          0x8000
