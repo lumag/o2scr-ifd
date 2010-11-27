@@ -1,0 +1,10 @@
+# Configuration file for pcsc-lite for O2SCR
+#
+# Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+
+FRIENDLYNAME            "O2Micro SmartCardBus Reader"
+DEVICENAME              /dev/o2scr0
+LIBPATH                 @libdir@/libo2scr-ifd.so
+CHANNELID               0x0
+
+

@@ -1,4 +1,4 @@
-SUBDIRS = src
+SUBDIRS = src etc
 ACLOCAL_AMFLAGS = -I m4
 
 libtool: $(LIBTOOL_DEPS)

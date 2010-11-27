@@ -16,5 +16,5 @@ AC_SUBST(PCSC_LIBS)
 LT_INIT([win32-dll disable-static])
 AC_SUBST(LIBTOOL_DEPS)
 
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile etc/Makefile])
 AC_OUTPUT
